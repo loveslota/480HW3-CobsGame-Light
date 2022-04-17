@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Cob's Soulo Game Light</title>
+        <link rel="stylesheet" href="store.css">
+
+        <script type="text/javscript">
+
+        </script>
+    </head>
+
+    <body>
+
+        <header>Welcome to Cob's Soulo Game</header>
+
+        <div id="main">
+            <article><table style="width:100%;">
+                <tr>
+                    <td>
+                        <div class="card" id="item1">
+                            <img src="https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2020/11/d1.png" style="width:16vh;height:12vh;" alt="Sand Sole">
+                            <div class="title">
+                                Dark Display
+                            </br>
+                                $0.49
+                            </div>
+                            <button onclick="addToCart(item1)">Add to cart</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card" id="item2">
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/424/712/original/padlock-icon-vector-illustration.jpg" style="width:16vh;height:12vh;" alt="Sand Sole">
+                            
+                    </td>
+                    <td>
+                        <div class="card" id="item3">
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/424/712/original/padlock-icon-vector-illustration.jpg" style="width:16vh;height:12vh;" alt="Sand Sole">
+                            
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card" id="item4">
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/424/712/original/padlock-icon-vector-illustration.jpg" style="width:16vh;height:12vh;" alt="Sand Sole">
+                            
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card" id="item5">
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/424/712/original/padlock-icon-vector-illustration.jpg" style="width:16vh;height:12vh;" alt="Sand Sole">
+                        </div>    
+                    </td>
+                    <td>
+                        <div class="card" id="item6">
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/424/712/original/padlock-icon-vector-illustration.jpg" style="width:16vh;height:12vh;" alt="Sand Sole">
+                            
+                        </div>
+                    </td>
+                </tr>
+            </table> </article>
+            <nav>
+                <ul>
+                    <li><a href="index.html" target="_self">Home</a></li>
+                    <li><a href="game.html" target="_self">Play</a></li>
+                    <li><a href="#" target="_self">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <aside>
+                <div class="cart" id="cart">
+                    <div class="title">Cart</div><hr/>
+                    <div id="title"></div>
+                </div>
+            
+            <button type="button">
+                    Checkout
+            </button> 
+        
+            <div id="totalDisplay"></div></aside>
+        </div>
+
+        <footer style="text-align:center;font-size:smaller;">
+            <p>Cob's Cobbler</p>
+            <p>1234 Main St.</p>
+            <p>New York, NY 12345</p>
+            <p>info@CobsCobblers.com</p>
+        </footer>
+
+    </body>
+    
+</html>
+<script>
+    var addItemId = 0;
+var total = 8;
+function addToCart(item){
+    addItemId += 1;
+    var selectedItem = document.createElement('div');
+    selectedItem.classList.add('cartImg');
+    selectedItem.setAttribute('id',addItemId);
+    var img = document.createElement('img');
+    img.setAttribute('src',item.children[0].currentSrc);
+    var title = document.createElement('div');
+    title.innerText = item.children[1].innerText;
+    var label = document.createElement('div');
+    label.innerText = item.children[2].children[0].innerText;
+    var select = document.createElement('span');
+    select.innerText = item.children[1].children[0].value;
+    label.append(select);
+    var delBtn = document.createElement('button');
+    delBtn.innerText = 'Delete';
+    delBtn.setAttribute('onclick', 'del('+addItemId+')');
+    var displayTotal = document.getElementById('totalDisplay');
+    displayTotal.innerHTML = 'Total: $' + (total + 8);
+    var cartItems = document.getElementById('title');
+    selectedItem.append(img);
+    selectedItem.append(title);
+    selectedItem.append(label);
+    selectedItem.append(delBtn);
+    selectedItem.append(displayTotal);
+    cartItems.append(selectedItem);
+
+}
+
+function del(item) {
+    document.getElementById(item).remove();
+}
+</script>

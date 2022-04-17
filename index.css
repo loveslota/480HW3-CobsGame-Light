@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box; 
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+  #main {
+    display: flex;
+    flex: 1;
+  }
+  #main > article {
+    flex: 1;
+    background: #FFF6CC;
+    text-align: center;
+    padding-top: 14em;
+    background-image: url(UPDATEupsideDown5ptStar.jpg);
+  }
+  #main > nav, 
+  #main > aside {
+    flex: 0 0 20vw;
+    background: #E9CE2C;
+  }
+  
+  #main > nav {
+    order: -1;
+  }
+  p {
+      color: #212529;
+  }
+  header {
+    
+    background: #C44900;
+    height: 17vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: capitalize;
+    letter-spacing: 0.15em;
+    color: #FFF6CC;
+    text-shadow: 0 0 5px #ffdd1e,
+                0 0 25px #ffdd1e,
+                0 0 50px #ffdd1e,
+                0 0 75px #ffdd1e,
+                0 0 100px #ffdd1e;
+    text-align: center;
+    line-height: 1.8em;
+  }
+  footer {
+    background: #C44900;
+    height: 14vh;
+  }
+  header, footer, article, nav, aside {
+    padding: 1em;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5;
+  }
+
+  nav ul a {
+    color: #92817A;
+    text-decoration:none;
+    border: 2px solid #f5dc4d;
+    letter-spacing: 0.15em;
+    line-height: 3.5em;
+  }
